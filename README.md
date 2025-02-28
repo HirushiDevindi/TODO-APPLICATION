@@ -12,7 +12,8 @@ docker-compose up --build
 - Backend API: http://localhost:8080 (via postman or curl)
 - MySQL: localhost:3307 (user: your_username, password: your_password) - You can use database management tools like MySQL Workbench to connect to the database
 
-## create a .env file and copy the content from .env.example
+## Environment Setting
+- create a .env file and copy the content from .env.example
 - Replace the username and password accordingly
 
 
