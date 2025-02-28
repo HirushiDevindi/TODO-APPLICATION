@@ -1,8 +1,10 @@
 # Welcome to Todo Application
 
 ## 1. Clone the repository
-- git clone https://github.com/your-username/your-repo.git
-- cd your-repo
+```bash
+git clone https://github.com/HirushiDevindi/TODO-APPLICATION.git  
+cd TODO-APPLICATION
+```  
 
 ## 2. Start all services
 docker-compose up --build
