@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: todo_db
+    environment:
+      MYSQL_DATABASE: todo_db
+
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    env_file:
+      - .env
+
+  backend:
+    build:
+      context: ./backend
+    container_name: todo-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/todo_db
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: todo_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://todo-backend:8080/api
+
+volumes:
+  db_data:

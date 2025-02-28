@@ -1,0 +1,7 @@
+
+Dockerfile
+.dockerignore
+*.log
+*.idea/
+*.iml
+*.class
